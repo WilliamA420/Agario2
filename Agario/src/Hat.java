@@ -13,8 +13,7 @@ public class Hat{
 	public int x, y;//position of the pillar
 	private int vx; // velocty of x
 	
-	int w = 60;
-	int ph = 160;
+	
 	
 	
 	
@@ -51,16 +50,28 @@ public class Hat{
 	}
 	
 	public void moveL() {
-		 vx -=5;
+		 vx -= 5;
 		
 		//find a cap for vy
 	}
 	
+	public void moveR() {
+		 vx += 5;
+		
+		//find a cap for vy
+	}
 	/* update the picture variable location */
 	private void update() {
 		
 		
-		
+		if(x<-40) {
+			x=-40;
+			vx = 0;
+		}
+		if(x>40) {
+			x=40;
+			vx = 0;
+		}
 		x += vx;
 		
 		

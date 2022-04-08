@@ -129,6 +129,10 @@ public static void main(String[] arg) {
 			hat.moveL();
 			
 		}
+		if(arg0.getKeyCode()==39) {
+			hat.moveR();
+			
+		}
 	}
 
 	@Override
