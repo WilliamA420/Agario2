@@ -50,36 +50,44 @@ public class Hat{
 	}
 	
 	public void moveL() {
-		 vx -= 5;
+		 vx -= 7;
 		
 		//find a cap for vy
 	}
 	
 	public void moveR() {
-		 vx += 5;
-		
+		 vx += 7;
+		 
 		//find a cap for vy
 	}
 	public void moveU() {
-		 vy -= 5;
+		 vy -= 7;
 		
 		//find a cap for vy
 	}
 	public void moveD() {
-		 vy += 5;
+		 vy += 7;
 		
 		//find a cap for vy
 	}
 	/* update the picture variable location */
 	private void update() {
 		
+		if(y<-10) {
+			y=-10;
+			vy = 0;
+		}
+		if(y>900) {
+			y=900;
+			vy = 0;
+		}
 		
 		if(x<-40) {
 			x=-40;
 			vx = 0;
 		}
-		if(x>200) {
-			x=200;
+		if(x>950) {
+			x=950;
 			vx = 0;
 		}
 		x += vx;

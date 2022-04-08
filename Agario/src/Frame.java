@@ -131,6 +131,7 @@ public static void main(String[] arg) {
 			hat.moveL();
 			
 		}
+		
 		if(arg0.getKeyCode()==38) {
 			hat.vy = 0;
 			hat.vx = 0;
