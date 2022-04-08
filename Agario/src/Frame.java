@@ -126,11 +126,27 @@ public static void main(String[] arg) {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyCode());
 		if(arg0.getKeyCode()==37) {
+			hat.vx = 0;
+			hat.vy = 0;
 			hat.moveL();
 			
 		}
+		if(arg0.getKeyCode()==38) {
+			hat.vy = 0;
+			hat.vx = 0;
+			hat.moveU();
+			
+		}
 		if(arg0.getKeyCode()==39) {
+			hat.vx = 0;
+			hat.vy = 0;
 			hat.moveR();
+			
+		}
+		if(arg0.getKeyCode()==40) {
+			hat.vy = 0;
+			hat.vx = 0;
+			hat.moveD();
 			
 		}
 	}

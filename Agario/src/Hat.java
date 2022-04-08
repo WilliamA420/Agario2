@@ -11,8 +11,8 @@ import java.net.URL;
 public class Hat{
 	//add location attributes
 	public int x, y;//position of the pillar
-	private int vx; // velocty of x
-	
+	public int vx; // velocty of x
+	public int vy = 0;
 	
 	
 	
@@ -60,6 +60,16 @@ public class Hat{
 		
 		//find a cap for vy
 	}
+	public void moveU() {
+		 vy -= 5;
+		
+		//find a cap for vy
+	}
+	public void moveD() {
+		 vy += 5;
+		
+		//find a cap for vy
+	}
 	/* update the picture variable location */
 	private void update() {
 		
@@ -68,13 +78,13 @@ public class Hat{
 			x=-40;
 			vx = 0;
 		}
-		if(x>40) {
-			x=40;
+		if(x>200) {
+			x=200;
 			vx = 0;
 		}
 		x += vx;
 		
-		
+		y += vy;
 		tx.setToTranslation(x, y);
 		tx.scale(1	, 1);
 		
