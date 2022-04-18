@@ -13,13 +13,14 @@ public class Hat{
 	public int x, y;//position of the pillar
 	public int vx; // velocty of x
 	public int vy = 0;
-	
+	public double length = 2.5;
+	public double width = 2.5;
 	
 	
 	
 	
 	private Image img; 	
-	private AffineTransform tx;
+	public AffineTransform tx;
 
 	public Hat(int x, int y) {
 		this.x = x;
@@ -50,23 +51,23 @@ public class Hat{
 	}
 	
 	public void moveL() {
-		 vx -= 7;
+		 vx -= 5;
 		
 		//find a cap for vy
 	}
 	
 	public void moveR() {
-		 vx += 7;
+		 vx += 5;
 		 
 		//find a cap for vy
 	}
 	public void moveU() {
-		 vy -= 7;
+		 vy -= 5;
 		
 		//find a cap for vy
 	}
 	public void moveD() {
-		 vy += 7;
+		 vy += 5;
 		
 		//find a cap for vy
 	}
@@ -94,7 +95,7 @@ public class Hat{
 		
 		y += vy;
 		tx.setToTranslation(x, y);
-		tx.scale(1	, 1);
+		tx.scale(length	, width);
 		
 		//cap for vy
 		

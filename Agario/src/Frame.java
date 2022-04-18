@@ -26,10 +26,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 
 	
-	
-	BGMain mainM = new BGMain(0,0);
 	Background 	b = new Background(0, 0);
-	Hat hat = new Hat(0,0);
+	BGMain mainM = new BGMain(0,0);//main menu
+	Hat hat = new Hat(350,280);
 	//create music
 	
 	
@@ -42,6 +41,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		//b.paint(g);
+		b.paint(g);
 		mainM.paint(g);
 		hat.paint(g);
 		
@@ -125,36 +125,47 @@ public static void main(String[] arg) {
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyCode());
+		if(arg0.getKeyCode()==32) {
+			mainM.y = 10000;
+			mainM.x = 10000;
+			hat.x = 450;
+			hat.y = 400;
+			hat.length = 1;
+			hat.width = 1;
+		}
+		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
-			hat.vx = 0;
-			hat.vy = 0;
+			hat.vx += 0;
+			hat.vy += 0;
 			hat.moveL();
 			
 		}
 		
 		if(arg0.getKeyCode()==38) {
-			hat.vy = 0;
-			hat.vx = 0;
+			hat.vy += 0;
+			hat.vx += 0;
 			hat.moveU();
 			
 		}
 		if(arg0.getKeyCode()==39) {
-			hat.vx = 0;
-			hat.vy = 0;
+			hat.vx += 0;
+			hat.vy += 0;
 			hat.moveR();
 			
 		}
 		if(arg0.getKeyCode()==40) {
-			hat.vy = 0;
-			hat.vx = 0;
+			hat.vy += 0;
+			hat.vx += 0;
 			hat.moveD();
 			
+		}
 		}
 	}
 
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		// TODO Auto-generated method stub
+		
 		
 	}
 
