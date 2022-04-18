@@ -78,6 +78,18 @@ public class Hat{
 			y=-10;
 			vy = 0;
 		}
+		if(vy>15 ) {
+			vy=15;
+		}
+		if(vy<-15 ) {
+			vy=-15;
+		}
+		if(vx>15 ) {
+			vx=15;
+		}
+		if(vx<-15 ) {
+			vx=-15;
+		}
 		if(y>900) {
 			y=900;
 			vy = 0;
