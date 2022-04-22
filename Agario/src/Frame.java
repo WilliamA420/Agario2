@@ -31,8 +31,17 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	Hat hat = new Hat(350,280);
 	//create music
 	
+	static String start = "Press SPACE to start";
+	static String controls = "Click for Controls";
 	
-	
+	static String movement = "";
+	static String movement1 ="";
+	static String movement2 ="";
+	static String movement3 = "";
+	static String movement4 = "";
+	static String obj = "Objective:";
+	static String obj2 = "Collect as many dots as you can";
+	static String obj3 = "Watch out for ememies!";
 	
 	
 	
@@ -45,6 +54,56 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		mainM.paint(g);
 		hat.paint(g);
 		
+		Font f1 = new Font(Font.MONOSPACED, Font.BOLD, 24);
+		g.setFont(f1);
+		g.setColor(Color.red);
+		g.drawString(start +"", 380, 830 );
+		
+		Font f2 = new Font(Font.MONOSPACED, Font.BOLD, 30);
+		g.setFont(f2);
+		g.setColor(Color.red);
+		g.drawString(controls +"", 355, 665 );
+		
+		Font f3 = new Font(Font.MONOSPACED, Font.BOLD, 25);
+		g.setFont(f3);
+		g.setColor(Color.PINK);
+		g.drawString(movement +"", 750, 250 );
+		
+		Font f3p1 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		g.setFont(f3p1);
+		g.setColor(Color.pink);
+		g.drawString(movement1 +"", 770, 280 );
+	
+		Font f3p2 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		g.setFont(f3p2);
+		g.setColor(Color.pink);
+		g.drawString(movement2 +"", 770, 300 );
+		
+		Font f3p3 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		g.setFont(f3p3);
+		g.setColor(Color.pink);
+		g.drawString(movement3 +"", 770, 312 );
+		
+		Font f3p4 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		g.setFont(f3p4);
+		g.setColor(Color.pink);
+		g.drawString(movement4 +"", 770, 332 );
+		
+		Font f4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f4);
+		g.setColor(Color.magenta);
+		g.drawString(obj +"", 20, 250 );
+		
+		Font f4p1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f4p1);
+		g.setColor(Color.magenta);
+		g.drawString(obj2 +"", 25, 280 );
+		
+		Font f4p2 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f4p2);
+		g.setColor(Color.MAGENTA);
+		g.drawString(obj3 +"", 25, 310 );
+
 	}
 	
 	
@@ -87,7 +146,13 @@ public static void main(String[] arg) {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		if(arg0.getButton()==1) {
+			movement = "Movement:";
+			movement1 = "Move with arrow keys";
+			movement2 = "Click multiple times to";
+			movement3 = "increase speed";
+			movement4 = "Diagonal movement possible!";
+		}
 	}
 
 	@Override
@@ -125,6 +190,7 @@ public static void main(String[] arg) {
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyCode());
+		
 		if(arg0.getKeyCode()==32) {
 			mainM.y = 10000;
 			mainM.x = 10000;
@@ -132,6 +198,14 @@ public static void main(String[] arg) {
 			hat.y = 400;
 			hat.length = 1;
 			hat.width = 1;
+			start = "";
+			controls = "";
+			movement = "";
+			movement1 = "";
+			movement2 = "";
+			movement3 = "";
+			movement4 = "";
+			obj = "";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
