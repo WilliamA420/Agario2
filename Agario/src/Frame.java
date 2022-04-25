@@ -32,7 +32,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	//create music
 	
 	static String start = "Press SPACE to start";
-	static String controls = "Click for Controls";
+	static String controls = "*Click for Controls*";
 	
 	static String movement = "";
 	static String movement1 ="";
@@ -62,7 +62,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font f2 = new Font(Font.MONOSPACED, Font.BOLD, 30);
 		g.setFont(f2);
 		g.setColor(Color.red);
-		g.drawString(controls +"", 355, 665 );
+		g.drawString(controls +"", 347, 665 );
 		
 		Font f3 = new Font(Font.MONOSPACED, Font.BOLD, 25);
 		g.setFont(f3);
@@ -149,7 +149,7 @@ public static void main(String[] arg) {
 		if(arg0.getButton()==1) {
 			movement = "Movement:";
 			movement1 = "Move with arrow keys";
-			movement2 = "Click multiple times to";
+			movement2 = "Press key multiple times to";
 			movement3 = "increase speed";
 			movement4 = "Diagonal movement possible!";
 		}
@@ -206,6 +206,8 @@ public static void main(String[] arg) {
 			movement3 = "";
 			movement4 = "";
 			obj = "";
+			obj2 = "";
+			obj3 = "";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
