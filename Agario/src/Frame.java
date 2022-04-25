@@ -44,13 +44,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	static String obj3 = "Watch out for ememies!";
 	
 	static String collect = "Item Values:";
-	static String c2 = "Red = -1";
-	static String c3 = "Yellow = 1 ";
-	static String c4 = "Green = 2 ";
-	static String c5 = "Blue = 3 ";
-	static String c6 = "Purple = 4 ";
-	static String c7 = "Flower = 7 ";
-	
+	static String c2 = "Red = -3";
+	static String c3 = "Yellow = 3 ";
+	static String c4 = "Green = 4 ";
+	static String c5 = "Blue = 5 ";
+	static String c6 = "Purple = 6 ";
+	static String c7 = "Flower = 20 ";
+	static String c8 = "Enemies = -1 per sec";
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -144,6 +144,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setFont(f5p6);
 		g.setColor(Color.pink);
 		g.drawString(c7 +"", 30, 490 );
+		
+		Font f5p7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p7);
+		g.setColor(Color.gray);
+		g.drawString(c8 +"", 30, 510 );
 	}
 	
 	
@@ -236,6 +241,8 @@ public static void main(String[] arg) {
 			mainM.x = 10000;
 			hat.x = 450;
 			hat.y = 400;
+			hat.vy= 0;
+			hat.vx= 0;
 			hat.length = 1;
 			hat.width = 1;
 			start = "";
@@ -255,6 +262,7 @@ public static void main(String[] arg) {
 			c5 = "";
 			c6 = "";
 			c7 = "";
+			c8 = "";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
