@@ -43,8 +43,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	static String obj2 = "Collect as many dots as you can";
 	static String obj3 = "Watch out for ememies!";
 	
-	
-	
+	static String collect = "Item Values:";
+	static String c2 = "Red = -1";
+	static String c3 = "Yellow = 1 ";
+	static String c4 = "Green = 2 ";
+	static String c5 = "Blue = 3 ";
+	static String c6 = "Purple = 4 ";
+	static String c7 = "Flower = 7 ";
 	
 	
 	public void paint(Graphics g) {
@@ -67,27 +72,27 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font f3 = new Font(Font.MONOSPACED, Font.BOLD, 25);
 		g.setFont(f3);
 		g.setColor(Color.PINK);
-		g.drawString(movement +"", 750, 250 );
+		g.drawString(movement +"", 710, 250 );
 		
-		Font f3p1 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		Font f3p1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f3p1);
 		g.setColor(Color.pink);
-		g.drawString(movement1 +"", 770, 280 );
+		g.drawString(movement1 +"", 730, 280 );
 	
-		Font f3p2 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		Font f3p2 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f3p2);
 		g.setColor(Color.pink);
-		g.drawString(movement2 +"", 770, 300 );
+		g.drawString(movement2 +"", 730, 300 );
 		
-		Font f3p3 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		Font f3p3 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f3p3);
 		g.setColor(Color.pink);
-		g.drawString(movement3 +"", 770, 312 );
+		g.drawString(movement3 +"", 730, 315 );
 		
-		Font f3p4 = new Font(Font.MONOSPACED, Font.BOLD, 15);
+		Font f3p4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f3p4);
 		g.setColor(Color.pink);
-		g.drawString(movement4 +"", 770, 332 );
+		g.drawString(movement4 +"", 730, 335 );
 		
 		Font f4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f4);
@@ -104,6 +109,41 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.MAGENTA);
 		g.drawString(obj3 +"", 25, 310 );
 
+		
+		Font f5 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5);
+		g.setColor(Color.orange);
+		g.drawString(collect +"", 20, 370 );
+		
+		Font f5p1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p1);
+		g.setColor(Color.red);
+		g.drawString(c2 +"", 30, 390 );
+		
+		Font f5p2 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p2);
+		g.setColor(Color.yellow);
+		g.drawString(c3 +"", 30, 410 );
+		
+		Font f5p3 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p3);
+		g.setColor(Color.green);
+		g.drawString(c4 +"", 30, 430 );
+		
+		Font f5p4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p4);
+		g.setColor(Color.cyan);
+		g.drawString(c5 +"", 30, 450 );
+		
+		Font f5p5 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p5);
+		g.setColor(Color.magenta);
+		g.drawString(c6 +"", 30, 470 );
+		
+		Font f5p6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f5p6);
+		g.setColor(Color.pink);
+		g.drawString(c7 +"", 30, 490 );
 	}
 	
 	
@@ -149,9 +189,9 @@ public static void main(String[] arg) {
 		if(arg0.getButton()==1) {
 			movement = "Movement:";
 			movement1 = "Move with arrow keys";
-			movement2 = "Press key multiple times to";
-			movement3 = "increase speed";
-			movement4 = "Diagonal movement possible!";
+			movement2 = "Press key multiple times";
+			movement3 = "to increase speed";
+			movement4 = "Diagonal movement works!";
 		}
 	}
 
@@ -208,6 +248,13 @@ public static void main(String[] arg) {
 			obj = "";
 			obj2 = "";
 			obj3 = "";
+			collect = "";
+			c2 = "";
+			c3 = "";
+			c4 = "";
+			c5 = "";
+			c6 = "";
+			c7 = "";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
