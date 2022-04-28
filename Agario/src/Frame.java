@@ -43,6 +43,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	static String obj = "Objective:";
 	static String obj2 = "Collect as many dots as you can";
 	static String obj3 = "Watch out for ememies!";
+	static String obj4 = "Don't let Strength go ";
+	static String obj5 = "below zero";
 	
 	static String collect = "Item Values:";
 	static String c2 = "Red = -3";
@@ -52,6 +54,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	static String c6 = "Purple = 6 ";
 	static String c7 = "Flower = 20 ";
 	static String c8 = "Enemies = -1 per sec";
+	
+	static String score = "";
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -115,46 +119,60 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.MAGENTA);
 		g.drawString(obj3 +"", 25, 310 );
 
+		Font f4p3 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f4p3);
+		g.setColor(Color.MAGENTA);
+		g.drawString(obj4 +"", 25, 340 );
+		
+		Font f4p4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f4p4);
+		g.setColor(Color.MAGENTA);
+		g.drawString(obj5 +"", 25, 355 );
 		
 		Font f5 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5);
 		g.setColor(Color.orange);
-		g.drawString(collect +"", 20, 370 );
+		g.drawString(collect +"", 20, 380 );
 		
 		Font f5p1 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p1);
 		g.setColor(Color.red);
-		g.drawString(c2 +"", 30, 390 );
+		g.drawString(c2 +"", 30, 400 );
 		
 		Font f5p2 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p2);
 		g.setColor(Color.yellow);
-		g.drawString(c3 +"", 30, 410 );
+		g.drawString(c3 +"", 30, 420 );
 		
 		Font f5p3 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p3);
 		g.setColor(Color.green);
-		g.drawString(c4 +"", 30, 430 );
+		g.drawString(c4 +"", 30, 440 );
 		
 		Font f5p4 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p4);
 		g.setColor(Color.cyan);
-		g.drawString(c5 +"", 30, 450 );
+		g.drawString(c5 +"", 30, 460 );
 		
 		Font f5p5 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p5);
 		g.setColor(Color.magenta);
-		g.drawString(c6 +"", 30, 470 );
+		g.drawString(c6 +"", 30, 480 );
 		
 		Font f5p6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p6);
 		g.setColor(Color.pink);
-		g.drawString(c7 +"", 30, 490 );
+		g.drawString(c7 +"", 30, 500 );
 		
 		Font f5p7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f5p7);
 		g.setColor(Color.gray);
-		g.drawString(c8 +"", 30, 510 );
+		g.drawString(c8 +"", 30, 520 );
+		
+		Font f6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f6);
+		g.setColor(Color.orange);
+		g.drawString(score +"", 20, 30 );
 	}
 	
 	
@@ -261,6 +279,8 @@ public static void main(String[] arg) {
 			obj = "";
 			obj2 = "";
 			obj3 = "";
+			obj4 = "";
+			obj5 = "";
 			collect = "";
 			c2 = "";
 			c3 = "";
@@ -269,6 +289,7 @@ public static void main(String[] arg) {
 			c6 = "";
 			c7 = "";
 			c8 = "";
+			score = "Strength:";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
