@@ -178,7 +178,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	
 	
-	public static void score () {
+	public static void score () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
 		p1Score ++;
 		
