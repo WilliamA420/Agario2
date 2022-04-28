@@ -28,6 +28,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0,0);//main menu
+	BGGameOver gameOver = new BGGameOver(100,0);
 	Hat hat = new Hat(350,280);
 	//create music
 	
@@ -54,7 +55,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
+		/*if(score < 0){
+			mainM moves away
+			objects disappear
+		}*/
 		//b.paint(g);
+		gameOver.paint(g);
 		b.paint(g);
 		mainM.paint(g);
 		hat.paint(g);
