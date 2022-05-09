@@ -19,7 +19,7 @@ public class Hat{
 	
 	
 	
-	private Image img; 	
+	public Image img; 	
 	public AffineTransform tx;
 
 	public Hat(int x, int y) {
