@@ -24,7 +24,7 @@ public class Hat{
 
 	public Hat(int x, int y) {
 		this.x = x;
-		this.y = y;
+		this.y = y; 
 		img = getImage("/imgs/hatB.png"); //load the image for Tree
 
 		tx = AffineTransform.getTranslateInstance(x, y );
