@@ -29,7 +29,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public boolean wasClicked = false;
 	
 	Background 	b = new Background(0, 0);
-	BGMain mainM = new BGMain(0,0);//main menu
+	BGMain mainM = new BGMain(0 ,0);//main menu
 	BGGameOver gameOver = new BGGameOver(100,0);
 	Hat hat = new Hat(hatX,hatY);
 	//create music
@@ -270,7 +270,7 @@ public static void main(String[] arg) {
 		System.out.println(arg0.getKeyCode());
 		if(wasClicked != true) {
 		if(arg0.getKeyCode()==68) {
-			if( hat.isTrue <5){
+			if( hat.isTrue <8){
 			hat.isTrue ++;
 			//checks what image is selected
 			if(hat.isTrue ==0) {
@@ -294,6 +294,18 @@ public static void main(String[] arg) {
 				hat.y = 255;
 			}
 			else if(hat.isTrue == 5) {
+				hat.x = 380;
+				hat.y = 280;
+			}
+			else if(hat.isTrue == 6) {
+				hat.x = 380;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 7) {
+				hat.x = 380;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 8) {
 				hat.x = 380;
 				hat.y = 280;
 			}
@@ -323,6 +335,18 @@ public static void main(String[] arg) {
 				hat.y = 255;
 			}
 			else if(hat.isTrue == 5) {
+				hat.x = 380;
+				hat.y = 280;
+			}
+			else if(hat.isTrue == 6) {
+				hat.x = 380;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 7) {
+				hat.x = 3800;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 8) {
 				hat.x = 380;
 				hat.y = 280;
 			}
