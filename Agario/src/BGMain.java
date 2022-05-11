@@ -38,7 +38,7 @@ public class BGMain{
 		update();
 		g2.drawImage(img, tx, null);
 		
-		
+	
 
 	}
 	/* update the picture variable location */
