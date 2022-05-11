@@ -24,6 +24,9 @@ public class Hat{
 	public Image img4;
 	public Image img5;
 	public Image img6;
+	public Image img7;
+	public Image img8;
+	public Image img9;
 	public AffineTransform tx;
 
 	public Hat(int x, int y) {
@@ -35,6 +38,9 @@ public class Hat{
 		img4 = getImage("/imgs/France.png");
 		img5 = getImage("/imgs/Germany.png");
 		img6 = getImage("/imgs/Italy.png");
+		img7 = getImage("/imgs/Lux.png");
+		img8 = getImage("/imgs/Poland.png");
+		img9 = getImage("/imgs/Swed.png");
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
@@ -74,6 +80,15 @@ public class Hat{
 		}
 		else if(isTrue == 5) {
 			g2.drawImage(img6, tx, null);
+		}
+		else if(isTrue == 6) {
+			g2.drawImage(img7, tx, null);
+		}
+		else if(isTrue == 7) {
+			g2.drawImage(img8, tx, null);
+		}
+		else if(isTrue == 8) {
+			g2.drawImage(img9, tx, null);
 		}
 	}
 	
@@ -262,6 +277,102 @@ public class Hat{
 		}
 		
 		if(isTrue == 5) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 6) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 7) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 8) {
 			if(y<-20) {
 				y=-20;
 				vy = 0;
