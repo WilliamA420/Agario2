@@ -15,18 +15,26 @@ public class Hat{
 	public int vy = 0;
 	public double length = 2.5;
 	public double width = 2.5;
-	
-	
+	public int isTrue = 0;
 	
 	
 	public Image img; 	
+	public Image img2; 
+	public Image img3;
+	public Image img4;
+	public Image img5;
+	public Image img6;
 	public AffineTransform tx;
 
 	public Hat(int x, int y) {
 		this.x = x;
 		this.y = y; 
 		img = getImage("/imgs/hatB.png"); //load the image for Tree
-
+		img2 = getImage("/imgs/Clown.png");
+		img3 = getImage("/imgs/Brit.png");
+		img4 = getImage("/imgs/France.png");
+		img5 = getImage("/imgs/Germany.png");
+		img6 = getImage("/imgs/Italy.png");
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
@@ -34,6 +42,10 @@ public class Hat{
 	
 	
 	
+
+
+
+
 	public void changePicture(String newFileName) {
 		img = getImage(newFileName);
 		init(x, y);
@@ -42,12 +54,27 @@ public class Hat{
 	public void paint(Graphics g) {
 		//these are the 2 lines of code needed draw an image on the screen
 		Graphics2D g2 = (Graphics2D) g;
-
+		
 		//call update to update the actualy picture location
 		update();
+		if(isTrue == 0) {
 		g2.drawImage(img, tx, null);
-		
-		
+		}
+		else if(isTrue == 1) {
+			g2.drawImage(img2, tx, null);
+		}
+		else if(isTrue == 2) {
+			g2.drawImage(img3, tx, null);
+		}
+		else if(isTrue == 3) {
+			g2.drawImage(img4, tx, null);
+		}
+		else if(isTrue == 4) {
+			g2.drawImage(img5, tx, null);
+		}
+		else if(isTrue == 5) {
+			g2.drawImage(img6, tx, null);
+		}
 	}
 	
 	public void moveL() {
@@ -73,35 +100,197 @@ public class Hat{
 	}
 	/* update the picture variable location */
 	private void update() {
+		if(isTrue == 0) {
+			
+			if(y<-10) {
+				y=-10;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-40) {
+				x=-40;
+				vx = 0;
+			}
+			if(x>950) {
+				x=950;
+				vx = 0;
+			}
+			
+		}
+		if(isTrue == 1) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
 		
-		if(y<-10) {
-			y=-10;
-			vy = 0;
-		}
-		if(vy>15 ) {
-			vy=15;
-		}
-		if(vy<-15 ) {
-			vy=-15;
-		}
-		if(vx>15 ) {
-			vx=15;
-		}
-		if(vx<-15 ) {
-			vx=-15;
-		}
-		if(y>900) {
-			y=900;
-			vy = 0;
+		if(isTrue == 2) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>890) {
+				y=890;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
+				vx = 0;
+			}
+			if(x>970) {
+				x=970;
+				vx = 0;
+			}
 		}
 		
-		if(x<-40) {
-			x=-40;
-			vx = 0;
+		if(isTrue == 3) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
 		}
-		if(x>950) {
-			x=950;
-			vx = 0;
+		
+		if(isTrue == 4) {
+			if(y<-30) {
+				y=-30;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>890) {
+				y=890;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 5) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
 		}
 		x += vx;
 		

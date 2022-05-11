@@ -24,12 +24,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 	static int p1Score = 0;
 
-
+	public int hatX = 350;
+	public int hatY = 280;
+	public boolean wasClicked = false;
 	
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0,0);//main menu
 	BGGameOver gameOver = new BGGameOver(100,0);
-	Hat hat = new Hat(350,280);
+	Hat hat = new Hat(hatX,hatY);
 	//create music
 	
 	static String start = "Press SPACE to start";
@@ -57,13 +59,15 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	static String score = "";
 	
+	static String changeC = "Press A and D to change character:";
+	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		/*if(score < 0){
 			mainM moves away
 			objects disappear
 		}*/
-		//b.paint(g);
+		
 		gameOver.paint(g);
 		b.paint(g);
 		mainM.paint(g);
@@ -173,6 +177,11 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setFont(f6);
 		g.setColor(Color.orange);
 		g.drawString(score +"", 20, 30 );
+		
+		Font f7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f7);
+		g.setColor(Color.orange);
+		g.drawString(changeC +"", 300, 220 );
 	}
 	
 	
@@ -195,7 +204,7 @@ public static void main(String[] arg) {
 		Frame f = new Frame();
 	}
 	
-	
+
 	public Frame() {
 		JFrame f = new JFrame("Flappy Bird");
 		f.setSize(new Dimension(1050, 1000));
@@ -259,8 +268,70 @@ public static void main(String[] arg) {
 	public void keyPressed(KeyEvent arg0) {
 		// TODO Auto-generated method stub
 		System.out.println(arg0.getKeyCode());
-		
+		if(wasClicked != true) {
+		if(arg0.getKeyCode()==68) {
+			if( hat.isTrue <5){
+			hat.isTrue ++;
+			//checks what image is selected
+			if(hat.isTrue ==0) {
+				hat.x = 350;
+				hat.y = 280;
+			}
+			else if(hat.isTrue == 1) {
+				hat.x = 380;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 2) {
+				hat.x = 405;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 3) {
+				hat.x = 390;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 4) {
+				hat.x = 390;
+				hat.y = 255;
+			}
+			else if(hat.isTrue == 5) {
+				hat.x = 380;
+				hat.y = 280;
+			}
+			}
+		}
+		if(arg0.getKeyCode()==65) {
+			if(hat.isTrue > 0) {
+			hat.isTrue --;
+			if(hat.isTrue ==0) {
+				hat.x = 350;
+				hat.y = 280;
+			}
+			else if(hat.isTrue == 1) {
+				hat.x = 380;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 2) {
+				hat.x = 405;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 3) {
+				hat.x = 390;
+				hat.y = 265;
+			}
+			else if(hat.isTrue == 4) {
+				hat.x = 390;
+				hat.y = 255;
+			}
+			else if(hat.isTrue == 5) {
+				hat.x = 380;
+				hat.y = 280;
+			}
+			}
+			
+		}
+		}
 		if(arg0.getKeyCode()==32) {
+			wasClicked = true;
 			mainM.y = 10000;
 			mainM.x = 10000;
 			hat.x = 450;
@@ -290,6 +361,7 @@ public static void main(String[] arg) {
 			c7 = "";
 			c8 = "";
 			score = "Strength:";
+			changeC = "";
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
