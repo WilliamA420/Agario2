@@ -28,6 +28,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public int hatY = 280;
 	public boolean wasClicked = false;
 	
+	
+	Red[] r = new Red[40];
+	Yellow[] Y = new Yellow[27];
+	Green[] G = new Green[27];
+	Purple[] P = new Purple[30];
+	Flower[] F = new Flower[10];
+
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0 ,0);//main menu
 	BGGameOver gameOver = new BGGameOver(100,0);
@@ -182,6 +189,34 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setFont(f7);
 		g.setColor(Color.orange);
 		g.drawString(changeC +"", 300, 220 );
+		
+
+		
+		for(int i =0; i < r.length;i++) {
+			if(r[i].gameStatus == true) {
+			r[i].paint(g);
+			}
+		}
+		for(int i =0; i < Y.length;i++) {
+			if(Y[i].gameStatus == true) {
+			Y[i].paint(g);
+			}
+		}
+		for(int i =0; i < G.length;i++) {
+			if(G[i].gameStatus == true) {
+			G[i].paint(g);
+			}	
+		}
+		for(int i =0; i < P.length;i++) {
+			if(P[i].gameStatus == true) {
+			P[i].paint(g);
+			}	
+		}
+		for(int i =0; i < F.length;i++) {
+			if(F[i].gameStatus == true) {
+			F[i].paint(g);
+			}	
+		}
 	}
 	
 	
@@ -218,6 +253,57 @@ public static void main(String[] arg) {
 		t.start();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.setVisible(true);
+		
+for(int i =0; i < r.length; i++) {
+			
+			int x = (int)(Math.random() * 890) + 10;
+			
+			int y =(int)(Math.random() * 890) + 10;
+			
+			r[i] = new Red(x,y);
+
+		}
+	for(int i =0; i < Y.length; i++) {
+			
+			int x = (int)(Math.random() * 890) + 10;
+			
+			int y =(int)(Math.random() * 890) + 10;
+			
+			Y[i] = new Yellow(x,y);
+
+		}
+	for(int i =0; i < G.length; i++) {
+		
+		int x = (int)(Math.random() * 890) + 10;
+		
+		int y =(int)(Math.random() * 890) + 10;
+		
+		G[i] = new Green(x,y);
+
+	}
+	for(int i =0; i < P.length; i++) {
+		
+		int x = (int)(Math.random() * 890) + 10;
+		
+		int y =(int)(Math.random() * 890) + 10;
+		
+		P[i] = new Purple(x,y);
+
+	}
+	for(int i =0; i < F.length; i++) {
+		
+		int x = (int)(Math.random() * 890) + 10;
+		
+		int y =(int)(Math.random() * 890) + 10;
+		
+		F[i] = new Flower(x,y);
+
+	}
+
+
+
+
+
 	}
 	
 	
@@ -343,7 +429,7 @@ public static void main(String[] arg) {
 				hat.y = 270;
 			}
 			else if(hat.isTrue == 7) {
-				hat.x = 3800;
+				hat.x = 380;
 				hat.y = 270;
 			}
 			else if(hat.isTrue == 8) {
@@ -386,6 +472,23 @@ public static void main(String[] arg) {
 			c8 = "";
 			score = "Strength:";
 			changeC = "";
+			
+			for(int i = 0; i < 40; i++) {
+				r[i].gameStatus = true;
+			}
+			for(int i = 0; i < 27; i++) {
+				Y[i].gameStatus = true;
+			}
+			for(int i = 0; i < 27; i++) {
+				G[i].gameStatus = true;
+			}
+			for(int i = 0; i < 30; i++) {
+				P[i].gameStatus = true;
+			}
+			for(int i = 0; i < 10; i++) {
+				F[i].gameStatus = true;
+			}
+
 		}
 		if(arg0.getKeyCode()>32) {
 		if(arg0.getKeyCode()==37) {
