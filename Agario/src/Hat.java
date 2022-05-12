@@ -27,6 +27,10 @@ public class Hat{
 	public Image img7;
 	public Image img8;
 	public Image img9;
+	public Image img10;
+	public Image img11;
+	public Image img12;
+	public Image img13;
 	public AffineTransform tx;
 
 	public Hat(int x, int y) {
@@ -41,6 +45,10 @@ public class Hat{
 		img7 = getImage("/imgs/Lux.png");
 		img8 = getImage("/imgs/Poland.png");
 		img9 = getImage("/imgs/Swed.png");
+		img10 = getImage("/imgs/Switz.png");
+		img11 = getImage("/imgs/Ukraine.png");
+		img12 = getImage("/imgs/US.png");
+		img13 = getImage("/imgs/Yugo.png");
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
@@ -89,6 +97,18 @@ public class Hat{
 		}
 		else if(isTrue == 8) {
 			g2.drawImage(img9, tx, null);
+		}
+		else if(isTrue == 9) {
+			g2.drawImage(img10, tx, null);
+		}
+		else if(isTrue == 10) {
+			g2.drawImage(img11, tx, null);
+		}
+		else if(isTrue == 11) {
+			g2.drawImage(img12, tx, null);
+		}
+		else if(isTrue == 12) {
+			g2.drawImage(img13, tx, null);
 		}
 	}
 	
@@ -396,6 +416,133 @@ public class Hat{
 			
 			if(x<-30) {
 				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		if(isTrue == 9) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>890) {
+				y=890;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 10) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 11) {
+			if(y<-25) {
+				y=-25;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>890) {
+				y=890;
+				vy = 0;
+			}
+			
+			if(x<-30) {
+				x=-30;
+				vx = 0;
+			}
+			if(x>960) {
+				x=960;
+				vx = 0;
+			}
+		}
+		
+		if(isTrue == 12) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>885) {
+				y=885;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
 				vx = 0;
 			}
 			if(x>960) {

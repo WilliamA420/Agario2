@@ -310,12 +310,14 @@ for(int i =0; i < r.length; i++) {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 		// TODO Auto-generated method stub
+		if(wasClicked != true) {
 		if(arg0.getButton()==1) {
 			movement = "Movement:";
 			movement1 = "Move with arrow keys";
 			movement2 = "Press key multiple times";
 			movement3 = "to increase speed";
 			movement4 = "Diagonal movement works!";
+		}
 		}
 	}
 
@@ -356,7 +358,7 @@ for(int i =0; i < r.length; i++) {
 		System.out.println(arg0.getKeyCode());
 		if(wasClicked != true) {
 		if(arg0.getKeyCode()==68) {
-			if( hat.isTrue <8){
+			if( hat.isTrue <12){
 			hat.isTrue ++;
 			//checks what image is selected
 			if(hat.isTrue ==0) {
@@ -394,6 +396,22 @@ for(int i =0; i < r.length; i++) {
 			else if(hat.isTrue == 8) {
 				hat.x = 380;
 				hat.y = 280;
+			}
+			else if(hat.isTrue == 9) {
+				hat.x = 390;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 10) {
+				hat.x = 380;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 11) {
+				hat.x = 380;
+				hat.y = 250;
+			}
+			else if(hat.isTrue == 12) {
+				hat.x = 400;
+				hat.y = 260;
 			}
 			}
 		}
@@ -435,6 +453,22 @@ for(int i =0; i < r.length; i++) {
 			else if(hat.isTrue == 8) {
 				hat.x = 380;
 				hat.y = 280;
+			}
+			else if(hat.isTrue == 9) {
+				hat.x = 390;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 10) {
+				hat.x = 380;
+				hat.y = 270;
+			}
+			else if(hat.isTrue == 11) {
+				hat.x = 380;
+				hat.y = 250;
+			}
+			else if(hat.isTrue == 12) {
+				hat.x = 400;
+				hat.y = 260;
 			}
 			}
 			
@@ -490,7 +524,7 @@ for(int i =0; i < r.length; i++) {
 			}
 
 		}
-		if(arg0.getKeyCode()>32) {
+		if(wasClicked == true) {
 		if(arg0.getKeyCode()==37) {
 			hat.vx += 0;
 			hat.vy += 0;
