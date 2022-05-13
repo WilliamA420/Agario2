@@ -13,13 +13,13 @@ import java.util.Random;
 public class Green{
 	Random rnd = new Random(1234);
 	//add location attributes
-	double x; //position of the bird
-	double y;
+	public static double x,y; //position of the bird
 	public boolean gameStatus = false;
-	private Image img; 	
-	
-	
-	private AffineTransform tx;
+	public Image img; 	
+	public static double l = 2.5;
+	public static double w = 2.5;
+	public static double ph = 0;
+	public AffineTransform tx;
 	
 	private int count = 0;
 	
@@ -48,10 +48,7 @@ public class Green{
 		//these are the 2 lines of code needed draw an image on the screen
 		int p = (int)(Math.random() * 3) + 0;
 		Graphics2D g1 = (Graphics2D) g;
-		
-		Graphics2D g2 = (Graphics2D) g;
-		Graphics2D g3 = (Graphics2D) g;
-		Graphics2D g4 = (Graphics2D) g;
+	
 		//call update to update the actualy picture location
 		update();
 		

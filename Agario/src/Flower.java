@@ -48,9 +48,7 @@ public class Flower{
 		int p = (int)(Math.random() * 3) + 0;
 		Graphics2D g1 = (Graphics2D) g;
 		
-		Graphics2D g2 = (Graphics2D) g;
-		Graphics2D g3 = (Graphics2D) g;
-		Graphics2D g4 = (Graphics2D) g;
+		
 		//call update to update the actualy picture location
 		update();
 		
@@ -83,7 +81,7 @@ public class Flower{
 	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(.8, .8);
+		tx.scale(1, 1);
 	}
 
 	private Image getImage(String path) {

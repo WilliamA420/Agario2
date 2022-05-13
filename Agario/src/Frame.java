@@ -30,10 +30,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	
 	Red[] r = new Red[40];
-	Yellow[] Y = new Yellow[27];
-	Green[] G = new Green[27];
-	Purple[] P = new Purple[30];
-	Flower[] F = new Flower[10];
+	Yellow[] Y = new Yellow[40];
+	Green[] G = new Green[30];
+	Purple[] P = new Purple[20];
+	Flower[] F = new Flower[4];
 
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0 ,0);//main menu
@@ -78,7 +78,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		gameOver.paint(g);
 		b.paint(g);
 		mainM.paint(g);
-		hat.paint(g);
+		
 		
 		Font f1 = new Font(Font.MONOSPACED, Font.BOLD, 24);
 		g.setFont(f1);
@@ -180,10 +180,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.gray);
 		g.drawString(c8 +"", 30, 520 );
 		
-		Font f6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
-		g.setFont(f6);
-		g.setColor(Color.orange);
-		g.drawString(score +"", 20, 30 );
+	
 		
 		Font f7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f7);
@@ -216,6 +213,22 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			if(F[i].gameStatus == true) {
 			F[i].paint(g);
 			}	
+		}	
+		
+		hat.paint(g);
+
+		//strength, has to be on top
+		Font f6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f6);
+		g.setColor(Color.orange);
+		g.drawString(score +"", 20, 30);
+		
+		if(hat.isTrue == 0) {
+			for(int i = 0; i< r.length; i++) {
+				// if hat hits point red from anywhere on point x or point x + points width 
+					
+				
+			}
 		}
 	}
 	
@@ -299,7 +312,7 @@ for(int i =0; i < r.length; i++) {
 		F[i] = new Flower(x,y);
 
 	}
-
+	
 
 
 
@@ -358,7 +371,7 @@ for(int i =0; i < r.length; i++) {
 		System.out.println(arg0.getKeyCode());
 		if(wasClicked != true) {
 		if(arg0.getKeyCode()==68) {
-			if( hat.isTrue <12){
+			if( hat.isTrue <13){
 			hat.isTrue ++;
 			//checks what image is selected
 			if(hat.isTrue ==0) {
@@ -412,6 +425,10 @@ for(int i =0; i < r.length; i++) {
 			else if(hat.isTrue == 12) {
 				hat.x = 400;
 				hat.y = 260;
+			}
+			else if(hat.isTrue == 13) {
+				hat.x = 400;
+				hat.y = 280;
 			}
 			}
 		}
@@ -470,6 +487,10 @@ for(int i =0; i < r.length; i++) {
 				hat.x = 400;
 				hat.y = 260;
 			}
+			else if(hat.isTrue == 13) {
+				hat.x = 400;
+				hat.y = 280;
+			}
 			}
 			
 		}
@@ -510,16 +531,16 @@ for(int i =0; i < r.length; i++) {
 			for(int i = 0; i < 40; i++) {
 				r[i].gameStatus = true;
 			}
-			for(int i = 0; i < 27; i++) {
+			for(int i = 0; i < 40; i++) {
 				Y[i].gameStatus = true;
 			}
-			for(int i = 0; i < 27; i++) {
+			for(int i = 0; i < 30; i++) {
 				G[i].gameStatus = true;
 			}
-			for(int i = 0; i < 30; i++) {
+			for(int i = 0; i < 20; i++) {
 				P[i].gameStatus = true;
 			}
-			for(int i = 0; i < 10; i++) {
+			for(int i = 0; i < 4; i++) {
 				F[i].gameStatus = true;
 			}
 

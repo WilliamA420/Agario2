@@ -31,6 +31,7 @@ public class Hat{
 	public Image img11;
 	public Image img12;
 	public Image img13;
+	public Image img14;
 	public AffineTransform tx;
 
 	public Hat(int x, int y) {
@@ -49,6 +50,7 @@ public class Hat{
 		img11 = getImage("/imgs/Ukraine.png");
 		img12 = getImage("/imgs/US.png");
 		img13 = getImage("/imgs/Yugo.png");
+		img14 = getImage("/imgs/Pacman.png");
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
@@ -109,6 +111,9 @@ public class Hat{
 		}
 		else if(isTrue == 12) {
 			g2.drawImage(img13, tx, null);
+		}
+		else if(isTrue == 13) {
+			g2.drawImage(img14, tx, null);
 		}
 	}
 	
@@ -547,6 +552,37 @@ public class Hat{
 			}
 			if(x>960) {
 				x=960;
+				vx = 0;
+			}
+		}
+		if(isTrue == 13) {
+			if(y<-20) {
+				y=-20;
+				vy = 0;
+			}
+			if(vy>15 ) {
+				vy=15;
+			}
+			if(vy<-15 ) {
+				vy=-15;
+			}
+			if(vx>15 ) {
+				vx=15;
+			}
+			if(vx<-15 ) {
+				vx=-15;
+			}
+			if(y>900) {
+				y=900;
+				vy = 0;
+			}
+			
+			if(x<-20) {
+				x=-20;
+				vx = 0;
+			}
+			if(x>970) {
+				x=970;
 				vx = 0;
 			}
 		}
