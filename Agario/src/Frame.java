@@ -66,7 +66,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	static String score = "";
 	
-	static String changeC = "Press A and D to change character:";
+	static String changeC = "Press A or D to change character:";
 	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -185,7 +185,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		Font f7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f7);
 		g.setColor(Color.orange);
-		g.drawString(changeC +"", 300, 220 );
+		g.drawString(changeC +"", 310, 220 );
 		
 
 		
