@@ -22,8 +22,9 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
 
-	static int p1Score = 0;
+	static int p1Score;
 
+	public Color scoreCol = Color.black;
 	public int hatX = 350;
 	public int hatY = 280;
 	public boolean wasClicked = false;
@@ -75,10 +76,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			objects disappear
 		}*/
 		
+			
+			
+		
 		gameOver.paint(g);
 		b.paint(g);
 		mainM.paint(g);
-		
+	
 		
 		Font f1 = new Font(Font.MONOSPACED, Font.BOLD, 24);
 		g.setFont(f1);
@@ -180,12 +184,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.gray);
 		g.drawString(c8 +"", 30, 520 );
 		
-	
 		
 		Font f7 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f7);
 		g.setColor(Color.orange);
 		g.drawString(changeC +"", 310, 220 );
+		
+		Font f8 = new Font(Font.MONOSPACED, Font.BOLD, 20);
+		g.setFont(f8);
+		g.setColor(scoreCol);
+		g.drawString(p1Score +"", 130, 31 );
 		
 
 		
@@ -217,6 +225,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		hat.paint(g);
 
+	
+
 		//strength, has to be on top
 		Font f6 = new Font(Font.MONOSPACED, Font.BOLD, 20);
 		g.setFont(f6);
@@ -235,9 +245,39 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	
 	
-	public static void score () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+	public static void scoreRed () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
-		p1Score ++;
+		p1Score -=3;
+		
+	}
+	public static void scoreYellow () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+		
+		p1Score +=3;
+		
+	}
+	public static void scoreGreen () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+	
+		p1Score +=4;
+	
+	}
+	public static void scoreBlue () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+	
+		p1Score +=5;
+	
+	}
+	public static void scorePurple () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+		
+		p1Score +=6;
+		
+	}
+	public static void scoreFlower () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+		
+		p1Score +=20;
+		
+	}
+	public static void scoreEnemy () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
+		
+		p1Score --;
 		
 	}
 	
@@ -495,6 +535,7 @@ for(int i =0; i < r.length; i++) {
 			
 		}
 		}
+		if(wasClicked == false) {
 		if(arg0.getKeyCode()==32) {
 			wasClicked = true;
 			mainM.y = 10000;
@@ -527,6 +568,7 @@ for(int i =0; i < r.length; i++) {
 			c8 = "";
 			score = "Strength:";
 			changeC = "";
+			scoreCol =Color.ORANGE;
 			
 			for(int i = 0; i < 40; i++) {
 				r[i].gameStatus = true;
@@ -543,7 +585,7 @@ for(int i =0; i < r.length; i++) {
 			for(int i = 0; i < 4; i++) {
 				F[i].gameStatus = true;
 			}
-
+		}
 		}
 		if(wasClicked == true) {
 		if(arg0.getKeyCode()==37) {
