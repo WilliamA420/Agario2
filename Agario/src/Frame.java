@@ -22,7 +22,7 @@ import javax.swing.Timer;
 public class Frame extends JPanel implements ActionListener, MouseListener, KeyListener {
 	
 
-	static int p1Score;
+	static int p1Score = 0;
 
 	public Color scoreCol = Color.black;
 	public int hatX = 350;
@@ -38,7 +38,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0 ,0);//main menu
-	BGGameOver gameOver = new BGGameOver(100,0);
+	BGGameOver gameOver = new BGGameOver(0,-150);
 	Hat hat = new Hat(hatX,hatY);
 	//create music
 	
@@ -237,7 +237,10 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			for(int i = 0; i< r.length; i++) {
 				// if hat hits point red from anywhere on point x or point x + points width 
 					
-				
+				if(p1Score < 0) {
+					b.x = 10000;
+					b.y = 10000;
+				}
 			}
 		}
 	}
@@ -537,6 +540,7 @@ for(int i =0; i < r.length; i++) {
 		}
 		if(wasClicked == false) {
 		if(arg0.getKeyCode()==32) {
+			p1Score+=10;
 			wasClicked = true;
 			mainM.y = 10000;
 			mainM.x = 10000;
@@ -592,7 +596,7 @@ for(int i =0; i < r.length; i++) {
 			hat.vx += 0;
 			hat.vy += 0;
 			hat.moveL();
-			
+			p1Score --;
 		}
 		
 		if(arg0.getKeyCode()==38) {

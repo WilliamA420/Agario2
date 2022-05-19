@@ -44,7 +44,7 @@ public class BGGameOver{
 	/* update the picture variable location */
 	private void update() {
 		tx.setToTranslation(x, y);
-		tx.scale(3, 3);
+		tx.scale(3.5, 4);
 	}
 	
 	private void init(double a, double b) {
