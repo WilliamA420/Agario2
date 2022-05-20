@@ -233,14 +233,19 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(Color.orange);
 		g.drawString(score +"", 20, 30);
 		
+				if(p1Score < 0) {
+					b.x = 10000;
+					b.y = 10000;
+					hat.x = 450;
+					hat.y = 430;
+					hat.vx = 0;
+					//move points off screen
+				}
 		if(hat.isTrue == 0) {
 			for(int i = 0; i< r.length; i++) {
 				// if hat hits point red from anywhere on point x or point x + points width 
 					
-				if(p1Score < 0) {
-					b.x = 10000;
-					b.y = 10000;
-				}
+				
 			}
 		}
 	}
@@ -592,6 +597,7 @@ for(int i =0; i < r.length; i++) {
 		}
 		}
 		if(wasClicked == true) {
+			if(p1Score>=0) {
 		if(arg0.getKeyCode()==37) {
 			hat.vx += 0;
 			hat.vy += 0;
@@ -616,6 +622,7 @@ for(int i =0; i < r.length; i++) {
 			hat.vx += 0;
 			hat.moveD();
 			
+		}
 		}
 		}
 	}
