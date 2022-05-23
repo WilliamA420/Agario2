@@ -621,7 +621,7 @@ for(int i =0; i < r.length; i++) {
 			hat.vx += 0;
 			hat.vy += 0;
 			hat.moveL();
-			p1Score --;
+			
 		}
 		
 		if(arg0.getKeyCode()==38) {

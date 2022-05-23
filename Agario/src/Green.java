@@ -16,9 +16,6 @@ public class Green{
 	public static double x,y; //position of the bird
 	public boolean gameStatus = false;
 	public Image img; 	
-	public static double l = 2.5;
-	public static double w = 2.5;
-	public static double ph = 0;
 	public AffineTransform tx;
 	
 	private int count = 0;
