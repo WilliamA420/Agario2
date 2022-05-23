@@ -10,7 +10,7 @@ import java.net.URL;
 public class BGGameOver{
 	
 	//add location attributes
-	private int x, y; //position of the bird
+	public int x, y; //position of the bird
 	private Image img; 	
 	private AffineTransform tx;
 

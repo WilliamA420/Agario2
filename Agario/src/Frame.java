@@ -69,6 +69,9 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 	static String changeC = "Press A or D to change character:";
 	
+	static String ResetText = "";
+	
+	
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		/*if(score < 0){
@@ -79,7 +82,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			
 			
 		
-		gameOver.paint(g);
+		
 		b.paint(g);
 		mainM.paint(g);
 	
@@ -195,34 +198,42 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.setColor(scoreCol);
 		g.drawString(p1Score +"", 130, 31 );
 		
+	
 
 		
 		for(int i =0; i < r.length;i++) {
 			if(r[i].gameStatus == true) {
 			r[i].paint(g);
 			}
+			
 		}
 		for(int i =0; i < Y.length;i++) {
 			if(Y[i].gameStatus == true) {
 			Y[i].paint(g);
 			}
+			
 		}
 		for(int i =0; i < G.length;i++) {
 			if(G[i].gameStatus == true) {
 			G[i].paint(g);
 			}	
+			
 		}
 		for(int i =0; i < P.length;i++) {
 			if(P[i].gameStatus == true) {
 			P[i].paint(g);
 			}	
+			
 		}
 		for(int i =0; i < F.length;i++) {
 			if(F[i].gameStatus == true) {
 			F[i].paint(g);
 			}	
+			
 		}	
-		
+		if(p1Score < 0) {
+		gameOver.paint(g);
+		}
 		hat.paint(g);
 
 	
@@ -248,6 +259,14 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				
 			}
 		}
+		if(p1Score < 0) {
+			ResetText = "Close Game to Reset";
+		}
+		Font f9 = new Font(Font.MONOSPACED, Font.BOLD, 50);
+		g.setFont(f9);
+		g.setColor(Color.yellow);
+		g.drawString(ResetText +"", 220, 900 );
+		
 	}
 	
 	

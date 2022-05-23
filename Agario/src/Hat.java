@@ -15,7 +15,7 @@ public class Hat{
 	public int vy = 0;
 	public double length = 2.5;
 	public double width = 2.5;
-	public int isTrue = 0;
+	public static int isTrue = 0;
 	
 	
 	public Image img; 	
