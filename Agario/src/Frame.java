@@ -231,9 +231,121 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}	
 			
 		}	
+		
+
+		for(int i =0; i < r.length;i++) {
+			
+			if(r[i].gameStatus == true) {
+			r[i].paint(g);
+			if(Math.abs(hat.x - r[i].x) < 32) {
+				if(Math.abs(hat.y - r[i].y) <32){
+					r[i].pointStatus = true;
+					scoreRed();
+					
+				}
+			else if(Math.abs(r[i].x - hat.x) < 32) {
+					if(Math.abs(r[i].y - hat.y) <32){
+						r[i].pointStatus = true;
+						scoreRed();
+					}
+					
+				}	
+				
+			}
+			}
+		}
+
+		for(int i =0; i < G.length;i++) {
+			
+			if(G[i].gameStatus == true) {
+			G[i].paint(g);
+			if(Math.abs(hat.x - G[i].x) < 32) {
+				if(Math.abs(hat.y - G[i].y) <32){
+					G[i].pointStatus = true;
+					scoreGreen();
+					
+				}
+			else if(Math.abs(G[i].x - hat.x) < 32) {
+					if(Math.abs(G[i].y - hat.y) <32){
+						G[i].pointStatus = true;
+						scoreGreen();
+					}
+					
+				}	
+				
+			}
+			}
+		}
+		
+		for(int i =0; i < Y.length;i++) {
+			
+			if(Y[i].gameStatus == true) {
+			Y[i].paint(g);
+			if(Math.abs(hat.x - Y[i].x) < 32) {
+				if(Math.abs(hat.y - Y[i].y) <32){
+					Y[i].pointStatus = true;
+					scoreYellow();
+					
+				}
+			else if(Math.abs(Y[i].x - hat.x) < 32) {
+					if(Math.abs(Y[i].y - hat.y) <32){
+						Y[i].pointStatus = true;
+						scoreYellow();
+					}
+					
+				}	
+				
+			}
+			}
+		}
+		
+	for(int i =0; i < P.length;i++) {
+			
+			if(P[i].gameStatus == true) {
+			P[i].paint(g);
+			if(Math.abs(hat.x - P[i].x) < 32) {
+				if(Math.abs(hat.y - P[i].y) <32){
+					P[i].pointStatus = true;
+					scoreYellow();
+					
+				}
+			else if(Math.abs(P[i].x - hat.x) < 32) {
+					if(Math.abs(P[i].y - hat.y) <32){
+						P[i].pointStatus = true;
+						scoreYellow();
+					}
+					
+				}	
+				
+			}
+			}
+		}
+		
+	for(int i =0; i < F.length;i++) {
+		
+		if(F[i].gameStatus == true) {
+		F[i].paint(g);
+		if(Math.abs(hat.x - F[i].x) < 32) {
+			if(Math.abs(hat.y - F[i].y) <32){
+				F[i].pointStatus = true;
+				scoreFlower();
+				
+			}
+		else if(Math.abs(F[i].x - hat.x) < 32) {
+				if(Math.abs(F[i].y - hat.y) <32){
+					F[i].pointStatus = true;
+					scoreFlower();
+				}
+				
+			}	
+			
+		}
+		}
+	}
 		if(p1Score < 0) {
 		gameOver.paint(g);
 		}
+		
 		hat.paint(g);
 
 	
@@ -598,21 +710,21 @@ for(int i =0; i < r.length; i++) {
 			changeC = "";
 			scoreCol =Color.ORANGE;
 			
-			for(int i = 0; i < 40; i++) {
+			for(int i = 0; i < r.length; i++) {
 				r[i].gameStatus = true;
 			}
-			for(int i = 0; i < 40; i++) {
+			for(int i = 0; i < Y.length; i++) {
 				Y[i].gameStatus = true;
 			}
-			for(int i = 0; i < 30; i++) {
+			for(int i = 0; i < G.length; i++) {
 				G[i].gameStatus = true;
 			}
-			for(int i = 0; i < 20; i++) {
+			for(int i = 0; i < P.length; i++) {
 				P[i].gameStatus = true;
 			}
-			for(int i = 0; i < 4; i++) {
+			for(int i = 0; i < F.length; i++) {
 				F[i].gameStatus = true;
-			}
+			} 
 		}
 		}
 		if(wasClicked == true) {

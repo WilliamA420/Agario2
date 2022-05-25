@@ -11,25 +11,32 @@ import java.util.Random;
 
 public class Yellow{
 	Random rnd = new Random(1234);
-	//add location attributes
-	double x; //position of the bird
+	//x and y position of the Red
+	double x; 
 	double y;
-	public boolean gameStatus = false;
+	//tells whether the game is in progress or over
+	boolean gameStatus = false;
+	//the movement variables for Red
+	int speed = -7; //going left
+	double ax;
+	double vx ;
+	boolean pointStatus = false;
+	//score that is synched with the the other scores in bird and cactus class
+	
+	
+	
+	
 	private Image img; 	
-	
-	
 	private AffineTransform tx;
 	
-	private int count = 0;
+	 
 	
 	
-	
+	//Red img variables and display
 	public Yellow(int x, int y) {
 		this.x = x;
 		this.y = y;
-		 //load the image for Tree
-		img = getImage("/imgs/Yellow.png");
-		
+		img = getImage("/imgs/Yellow.png"); //load the image for Tree
 
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
@@ -45,22 +52,12 @@ public class Yellow{
 	
 	public void paint(Graphics g) {
 		//these are the 2 lines of code needed draw an image on the screen
-		int p = (int)(Math.random() * 3) + 0;
-		Graphics2D g1 = (Graphics2D) g;
-		
 		Graphics2D g2 = (Graphics2D) g;
-		Graphics2D g3 = (Graphics2D) g;
-		Graphics2D g4 = (Graphics2D) g;
+
 		//call update to update the actualy picture location
 		update();
+		g2.drawImage(img, tx, null);
 		
-		
-			g1.drawImage(img, tx, null);
-		
-		
-		
-		Font f1 = new Font(Font.SERIF, Font.BOLD, 100);
-		g.setFont(f1);
 		
 		
 		
@@ -68,28 +65,39 @@ public class Yellow{
 	
 
 	}
-	
-	public void gameS() {
-		gameStatus = true;
-	}
+	//method which constantly updates and finds out the position and score of game in relation to the Red
 	public void update() {
-				
-				
+		//if statement makes it so that after scoring 1200 points the Reds will start to appear 
+		//and progressivly speedup as long as you are alive and the score is going up
+		if(gameStatus == true &&  pointStatus == true) {
+			x =10000;
+			
 		}
+		//if statement to make the Red reset its x position between 1500 to 1000 
+				//if statement that declares when game is over that the Red stop moving and be sent to x
+		//position of 100
+			
+		//x position updates based of velocity and acceleration
 		
+		//x += vx;
+		//vx = ax;
+		//size of Red declared
+		tx.setToTranslation(x, y);
+		tx.scale(1, 1);
 		
+	}
 	/* update the picture variable location */
 
 	
 	private void init(double a, double b) {
 		tx.setToTranslation(a, b);
-		tx.scale(.8, .8);
+		tx.scale(.5, .5);
 	}
 
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = Green.class.getResource(path);
+			URL imageURL = Yellow.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -98,16 +106,6 @@ public class Yellow{
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
