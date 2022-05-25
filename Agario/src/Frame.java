@@ -29,7 +29,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	public int hatY = 280;
 	public boolean wasClicked = false;
 	
-	
+	Blue[] B = new Blue[20];
 	Red[] r = new Red[40];
 	Yellow[] Y = new Yellow[40];
 	Green[] G = new Green[30];
@@ -231,7 +231,12 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}	
 			
 		}	
-		
+		for(int i =0; i < B.length;i++) {
+			if(B[i].gameStatus == true) {
+			B[i].paint(g);
+			}	
+		}
+
 
 		for(int i =0; i < r.length;i++) {
 			
@@ -342,6 +347,28 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 		}
 	}
+	for(int i =0; i < B.length;i++) {
+		
+		if(B[i].gameStatus == true) {
+		B[i].paint(g);
+		if(Math.abs(hat.x - B[i].x) < 32) {
+			if(Math.abs(hat.y - B[i].y) <32){
+				B[i].pointStatus = true;
+				scoreBlue();
+				
+			}
+		else if(Math.abs(B[i].x - hat.x) < 32) {
+				if(Math.abs(B[i].y - hat.y) <32){
+					B[i].pointStatus = true;
+					scoreBlue();
+				}
+				
+			}	
+			
+		}
+		}
+	}
+
 		if(p1Score < 0) {
 		gameOver.paint(g);
 		}
@@ -491,7 +518,16 @@ for(int i =0; i < r.length; i++) {
 		F[i] = new Flower(x,y);
 
 	}
-	
+for(int i =0; i < B.length; i++) {
+		
+		int x = (int)(Math.random() * 890) + 10;
+		
+		int y =(int)(Math.random() * 890) + 10;
+		
+		B[i] = new Blue(x,y);
+
+	}
+
 
 
 
@@ -725,6 +761,10 @@ for(int i =0; i < r.length; i++) {
 			for(int i = 0; i < F.length; i++) {
 				F[i].gameStatus = true;
 			} 
+			for(int i = 0; i < B.length; i++) {
+				B[i].gameStatus = true;
+			}
+
 		}
 		}
 		if(wasClicked == true) {
