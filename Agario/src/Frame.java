@@ -330,13 +330,13 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		if(F[i].gameStatus == true) {
 		F[i].paint(g);
-		if(Math.abs(hat.x - F[i].x) < 32) {
+		if(Math.abs(hat.x+30 - F[i].x) < 32 ) {
 			if(Math.abs(hat.y - F[i].y) <32){
 				F[i].pointStatus = true;
 				scoreFlower();
 				
 			}
-		else if(Math.abs(F[i].x - hat.x) < 32) {
+		else if(Math.abs(F[i].x+150 - hat.x) < 32 ) {
 				if(Math.abs(F[i].y - hat.y) <32){
 					F[i].pointStatus = true;
 					scoreFlower();
