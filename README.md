@@ -6,12 +6,11 @@ In this game you are a circular object which you can control to move around the 
 ## Controls/Usage
 
 Up Arrow Key --> move Upwards
-
 Down Arrow Key --> move Downards
-
 Left Arrow Key --> move to the Left
-
 Right Arrow Key --> move to the Right
+
+"A" & "D" key --> change skin
 
 ## Classes
 
