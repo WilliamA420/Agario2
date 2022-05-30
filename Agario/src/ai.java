@@ -29,7 +29,7 @@ public class ai {
 	boolean purge = true;
 	double level = 1;
 	//the movement variables for Blue
-	int speed = -7; //going left
+	int speed = -10; //going left
 	double ax;
 	double vx ;
 	double ay;
@@ -109,8 +109,8 @@ public class ai {
 			
 			sub = 1;
 			
-			vx =3*xmultiplier;
-			vy=3*ymultiplier;
+			vx =5*xmultiplier;
+			vy=5*ymultiplier;
 			
 			
 			
@@ -120,8 +120,8 @@ public class ai {
 			
 			sub = 2;
 			
-			vx =5*xmultiplier;
-			vy=5*ymultiplier;
+			vx =8*xmultiplier;
+			vy=8*ymultiplier;
 			level = 2;
 			
 		}
@@ -130,8 +130,8 @@ public class ai {
 			
 			sub = 8;
 			
-			vx =8*xmultiplier;
-			vy=8*ymultiplier;
+			vx =10*xmultiplier;
+			vy=10*ymultiplier;
 			level = 3;
 			
 			
@@ -140,8 +140,8 @@ public class ai {
 			
 			sub = 12;
 			
-			vx =10*xmultiplier;
-			vy=10*ymultiplier;
+			vx =12*xmultiplier;
+			vy=12*ymultiplier;
 			level = 4;
 			
 			
@@ -150,8 +150,8 @@ public class ai {
 			
 			sub = 25;
 			
-			vx =12*xmultiplier;
-			vy=12*ymultiplier;
+			vx =14*xmultiplier;
+			vy=14*ymultiplier;
 			level = 5;
 			
 			

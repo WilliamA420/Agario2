@@ -22,7 +22,7 @@ public class Background{
 		init(x, y); 				//initialize the location of the image
 									//use your variables
 	}
-	
+
 	
 	public void changePicture(String newFileName) {
 		img = getImage(newFileName);
