@@ -1,4 +1,5 @@
 import java.awt.Font;
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -8,23 +9,31 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import java.net.URL;
 import java.util.Random;
-
-public class Purple{
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+import java.io.*;
+import java.lang.Thread;
+public class Purple {
 	Random rnd = new Random(1234);
-	//x and y position of the Red
+	//x and y position of the Purple
 	double x; 
 	double y;
 	//tells whether the game is in progress or over
 	boolean gameStatus = false;
-	//the movement variables for Red
+	boolean purge = true;
+	//the movement variables for Purple
 	int speed = -7; //going left
 	double ax;
 	double vx ;
 	boolean pointStatus = false;
+	
 	//score that is synched with the the other scores in bird and cactus class
+	public int i = 0;
 	
-	
-	
+	 Timer timer = new Timer();
+     
+      
 	
 	private Image img; 	
 	private AffineTransform tx;
@@ -32,7 +41,7 @@ public class Purple{
 	 
 	
 	
-	//Red img variables and display
+	//Purple img variables and display
 	public Purple(int x, int y) {
 		this.x = x;
 		this.y = y;
@@ -65,23 +74,36 @@ public class Purple{
 	
 
 	}
-	//method which constantly updates and finds out the position and score of game in relation to the Red
+	//method which constantly updates and finds out the position and score of game in relation to the Purple
 	public void update() {
-		//if statement makes it so that after scoring 1200 points the Reds will start to appear 
+		//if statement makes it so that after scoring 1200 points the Purples will start to appear 
 		//and progressivly speedup as long as you are alive and the score is going up
 		if(gameStatus == true &&  pointStatus == true) {
 			x =10000;
 			
 		}
-		//if statement to make the Red reset its x position between 1500 to 1000 
-				//if statement that declares when game is over that the Red stop moving and be sent to x
+		if(purge == false ) {
+			x = (int)(Math.random() * 890) + 10;
+			
+			y =(int)(Math.random() * 890) + 10;
+			pointStatus = false;
+			purge = true;
+		}
+		
+		
+		//if statement to make the Purple reset its x position between 1500 to 1000 
+				//if statement that declares when game is over that the Purple stop moving and be sent to x
 		//position of 100
 			
 		//x position updates based of velocity and acceleration
 		
 		//x += vx;
 		//vx = ax;
-		//size of Red declared
+		//size of Purple declaPurple
+		
+		
+		
+		
 		tx.setToTranslation(x, y);
 		tx.scale(1, 1);
 		
@@ -106,8 +128,4 @@ public class Purple{
 	}
 
 }
-
-
-
-
 

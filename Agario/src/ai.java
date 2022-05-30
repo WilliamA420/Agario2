@@ -1,4 +1,3 @@
-
 import java.awt.Font;
 
 import java.awt.Graphics;
@@ -15,25 +14,34 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 import java.io.*;
 import java.lang.Thread;
-public class Yellow {
+public class ai {
 	Random rnd = new Random(1234);
-	//x and y position of the Yellow
+	//x and y position of the Blue
 	double x; 
 	double y;
+	double point = 0;
+	double score =0;
+	double sub = -10;
+	double xmultiplier = 1;
+	double ymultiplier =1;
 	//tells whether the game is in progress or over
 	boolean gameStatus = false;
 	boolean purge = true;
-	//the movement variables for Yellow
+	double level = 1;
+	//the movement variables for Blue
 	int speed = -7; //going left
 	double ax;
 	double vx ;
+	double ay;
+	double vy ;
 	boolean pointStatus = false;
 	
 	//score that is synched with the the other scores in bird and cactus class
 	public int i = 0;
 	
 	 Timer timer = new Timer();
-    
+     
+      
      
       
 	
@@ -43,11 +51,11 @@ public class Yellow {
 	 
 	
 	
-	//Yellow img variables and display
-	public Yellow(int x, int y) {
+	//Blue img variables and display
+	public ai(int x, int y) {
 		this.x = x;
 		this.y = y;
-		img = getImage("/imgs/Yellow.png"); //load the image for Tree
+		img = getImage("/imgs/Pacman.png"); //load the image for Tree
 
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
@@ -76,32 +84,91 @@ public class Yellow {
 	
 
 	}
-	//method which constantly updates and finds out the position and score of game in relation to the Yellow
+	//method which constantly updates and finds out the position and score of game in relation to the Blue
 	public void update() {
-		//if statement makes it so that after scoring 1200 points the Yellows will start to appear 
+		//if statement makes it so that after scoring 1200 points the Blues will start to appear 
 		//and progressivly speedup as long as you are alive and the score is going up
-		if(gameStatus == true &&  pointStatus == true) {
-			x =10000;
+		if(x < -10 ) {
+			xmultiplier*=-1;
+		}
+		if(x > 970) {
+			xmultiplier*=-1;
+			
+	
+		}
+		
+		if(y < -10) {
+			ymultiplier*=-1;
+		}
+		if(y > 890) {
+			ymultiplier*=-1;
+			
+	
+		}
+		if(score <100) {
+			
+			sub = 1;
+			
+			vx =3*xmultiplier;
+			vy=3*ymultiplier;
+			
+			
 			
 		}
-		if(purge == false ) {
-			x = (int)(Math.random() * 890) + 10;
+		
+		if(score > 100 &&score <300 || level == 2) {
 			
-			y =(int)(Math.random() * 890) + 10;
-			pointStatus = false;
-			purge = true;
+			sub = 2;
+			
+			vx =5*xmultiplier;
+			vy=5*ymultiplier;
+			level = 2;
+			
+		}
+
+		if(score > 300 &&score <500 || level == 3) {
+			
+			sub = 8;
+			
+			vx =8*xmultiplier;
+			vy=8*ymultiplier;
+			level = 3;
+			
+			
+		}
+		if(score > 500 &&score <700 || level == 4) {
+			
+			sub = 12;
+			
+			vx =10*xmultiplier;
+			vy=10*ymultiplier;
+			level = 4;
+			
+			
+		}
+		if(score >700 || level == 5) {
+			
+			sub = 25;
+			
+			vx =12*xmultiplier;
+			vy=12*ymultiplier;
+			level = 5;
+			
+			
 		}
 		
 		
-		//if statement to make the Yellow reset its x position between 1500 to 1000 
-				//if statement that declares when game is over that the Yellow stop moving and be sent to x
+		//if statement to make the Blue reset its x position between 1500 to 1000 
+				//if statement that declares when game is over that the Blue stop moving and be sent to x
 		//position of 100
 			
 		//x position updates based of velocity and acceleration
 		
-		//x += vx;
-		//vx = ax;
-		//size of Yellow declaYellow
+		x += vx;
+		vx = ax;
+		y += vy;
+		vy = ay;
+		//size of Blue declaBlue
 		
 		
 		
@@ -121,7 +188,7 @@ public class Yellow {
 	private Image getImage(String path) {
 		Image tempImage = null;
 		try {
-			URL imageURL = Yellow.class.getResource(path);
+			URL imageURL = ai.class.getResource(path);
 			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -130,4 +197,5 @@ public class Yellow {
 	}
 
 }
+
 

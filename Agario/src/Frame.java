@@ -23,19 +23,26 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	
 
 	static int p1Score = 0;
-
+	
 	public Color scoreCol = Color.black;
+	
 	public int hatX = 350;
 	public int hatY = 280;
 	public boolean wasClicked = false;
+	public int dead = 0;
+	public int dead1 = 0;
+	public int dead2= 0;
+	public int dead3 = 0;
+	public int dead4 = 0;
+	public int dead5 = 0;
+	Blue[] B = new Blue[20];//20
+	Red[] r = new Red[60];//80
+	Yellow[] Y = new Yellow[40];//40
+	Green[] G = new Green[30];//30
+	Purple[] P = new Purple[20];//20
+	Flower[] F = new Flower[5];//5
+	ai a = new ai(200,200);
 	
-	Blue[] B = new Blue[20];
-	Red[] r = new Red[40];
-	Yellow[] Y = new Yellow[40];
-	Green[] G = new Green[30];
-	Purple[] P = new Purple[20];
-	Flower[] F = new Flower[4];
-
 	Background 	b = new Background(0, 0);
 	BGMain mainM = new BGMain(0 ,0);//main menu
 	BGGameOver gameOver = new BGGameOver(0,-150);
@@ -85,8 +92,8 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		
 		b.paint(g);
 		mainM.paint(g);
-	
 		
+		a.score = p1Score;
 		Font f1 = new Font(Font.MONOSPACED, Font.BOLD, 24);
 		g.setFont(f1);
 		g.setColor(Color.red);
@@ -199,13 +206,16 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		g.drawString(p1Score +"", 130, 31 );
 		
 	
-
+		
 		
 		for(int i =0; i < r.length;i++) {
 			if(r[i].gameStatus == true) {
 			r[i].paint(g);
 			}
 			
+		}
+		if(r[10].gameStatus == true) {
+			a.paint(g);
 		}
 		for(int i =0; i < Y.length;i++) {
 			if(Y[i].gameStatus == true) {
@@ -238,7 +248,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 		}
 
 
-		for(int i =0; i < r.length;i++) {
+for(int i =0; i < r.length;i++) {
 			
 			if(r[i].gameStatus == true) {
 			r[i].paint(g);
@@ -246,12 +256,28 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				if(Math.abs(hat.y - r[i].y) <32){
 					r[i].pointStatus = true;
 					scoreRed();
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<r.length; l++) {
+							if(r[l].pointStatus == true) {
+							r[l].purge = false;
+							}
+							}
+					}
 					
 				}
 			else if(Math.abs(r[i].x - hat.x) < 32) {
 					if(Math.abs(r[i].y - hat.y) <32){
 						r[i].pointStatus = true;
 						scoreRed();
+						dead++;
+						if(dead >=2) {
+							for(int l =0; l<r.length; l++) {
+								if(r[l].pointStatus == true) {
+								r[l].purge = false;
+								}
+								}
+						}
 					}
 					
 				}	
@@ -259,28 +285,7 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 			}
 		}
-
-		for(int i =0; i < G.length;i++) {
-			
-			if(G[i].gameStatus == true) {
-			G[i].paint(g);
-			if(Math.abs(hat.x - G[i].x) < 32) {
-				if(Math.abs(hat.y - G[i].y) <32){
-					G[i].pointStatus = true;
-					scoreGreen();
-					
-				}
-			else if(Math.abs(G[i].x - hat.x) < 32) {
-					if(Math.abs(G[i].y - hat.y) <32){
-						G[i].pointStatus = true;
-						scoreGreen();
-					}
-					
-				}	
-				
-			}
-			}
-		}
+		
 		
 		for(int i =0; i < Y.length;i++) {
 			
@@ -290,12 +295,29 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 				if(Math.abs(hat.y - Y[i].y) <32){
 					Y[i].pointStatus = true;
 					scoreYellow();
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<Y.length; l++) {
+							if(Y[l].pointStatus == true) {
+							Y[l].purge = false;
+							}
+							}
+					}
+
 					
 				}
 			else if(Math.abs(Y[i].x - hat.x) < 32) {
 					if(Math.abs(Y[i].y - hat.y) <32){
 						Y[i].pointStatus = true;
 						scoreYellow();
+						dead++;
+						if(dead >= 2) {
+							for(int l =0; l<Y.length; l++) {
+								if(Y[l].pointStatus == true) {
+								Y[l].purge = false;
+								}
+								}
+						}
 					}
 					
 				}	
@@ -304,20 +326,80 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 		}
 		
-	for(int i =0; i < P.length;i++) {
+		
+		
+		for(int i =0; i < G.length;i++) {
+			
+			if(G[i].gameStatus == true) {
+			G[i].paint(g);
+			if(Math.abs(hat.x - G[i].x) < 32) {
+				if(Math.abs(hat.y - G[i].y) <32){
+					G[i].pointStatus = true;
+					scoreGreen();
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<G.length; l++) {
+							if(G[l].pointStatus == true) {
+							G[l].purge = false;
+							}
+							}
+					}
+					
+				}
+			else if(Math.abs(G[i].x - hat.x) < 32) {
+					if(Math.abs(G[i].y - hat.y) <32){
+						G[i].pointStatus = true;
+						scoreGreen();
+						dead++;
+						if(dead >= 2) {
+							for(int l =0; l<G.length; l++) {
+								if(G[l].pointStatus == true) {
+								G[l].purge = false;
+								}
+								}
+						}
+					}
+					
+				}	
+				
+			}
+			}
+		}
+		
+		
+		
+		for(int i =0; i < P.length;i++) {
 			
 			if(P[i].gameStatus == true) {
 			P[i].paint(g);
 			if(Math.abs(hat.x - P[i].x) < 32) {
 				if(Math.abs(hat.y - P[i].y) <32){
 					P[i].pointStatus = true;
-					scoreYellow();
+					scorePurple();
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<P.length; l++) {
+							if(P[l].pointStatus == true) {
+							P[l].purge = false;
+							}
+							}
+					}
+					
 					
 				}
 			else if(Math.abs(P[i].x - hat.x) < 32) {
 					if(Math.abs(P[i].y - hat.y) <32){
 						P[i].pointStatus = true;
-						scoreYellow();
+						scorePurple();
+						
+						dead++;
+						if(dead >= 2) {
+							for(int l =0; l<P.length; l++) {
+								if(P[l].pointStatus == true) {
+								P[l].purge = false;
+								}
+								}
+						}
 					}
 					
 				}	
@@ -326,51 +408,113 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 			}
 		}
 		
-	for(int i =0; i < F.length;i++) {
 		
-		if(F[i].gameStatus == true) {
-		F[i].paint(g);
-		if(Math.abs(hat.x+30 - F[i].x) < 32 ) {
-			if(Math.abs(hat.y - F[i].y) <32){
-				F[i].pointStatus = true;
-				scoreFlower();
-				
-			}
-		else if(Math.abs(F[i].x+150 - hat.x) < 32 ) {
-				if(Math.abs(F[i].y - hat.y) <32){
+		
+		for(int i =0; i < F.length;i++) {
+			
+			if(F[i].gameStatus == true) {
+			F[i].paint(g);
+			if(Math.abs(hat.x+30 - F[i].x) < 32) {
+				if(Math.abs(hat.y - F[i].y) <32){
 					F[i].pointStatus = true;
 					scoreFlower();
+					
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<F.length; l++) {
+							if(F[l].pointStatus == true) {
+							F[l].purge = false;
+							}
+							}
+					}
+					
+				}
+			else if(Math.abs(F[i].x+150 - hat.x) < 32) {
+					if(Math.abs(F[i].y - hat.y) <32){
+						F[i].pointStatus = true;
+						scoreFlower();
+						dead++;
+						if(dead >= 2) {
+							for(int l =0; l<F.length; l++) {
+								if(F[l].pointStatus == true) {
+								F[l].purge = false;
+								}
+								}
+						}
+					}
+					
 				}
 				
-			}	
-			
-		}
-		}
-	}
-	for(int i =0; i < B.length;i++) {
-		
-		if(B[i].gameStatus == true) {
-		B[i].paint(g);
-		if(Math.abs(hat.x - B[i].x) < 32) {
-			if(Math.abs(hat.y - B[i].y) <32){
-				B[i].pointStatus = true;
-				scoreBlue();
 				
 			}
-		else if(Math.abs(B[i].x - hat.x) < 32) {
-				if(Math.abs(B[i].y - hat.y) <32){
+			}
+		}
+		
+		
+for(int i =0; i < B.length;i++) {
+			
+			if(B[i].gameStatus == true) {
+			B[i].paint(g);
+			if(Math.abs(hat.x - B[i].x) < 32) {
+				if(Math.abs(hat.y - B[i].y) <32){
 					B[i].pointStatus = true;
 					scoreBlue();
+					dead++;
+					if(dead >= 2) {
+						for(int l =0; l<B.length; l++) {
+							if(B[l].pointStatus == true) {
+							B[l].purge = false;
+							}
+							}
+					}
+					
 				}
-				
-			}	
+			else if(Math.abs(B[i].x - hat.x) < 32) {
+					if(Math.abs(B[i].y - hat.y) <32){
+						B[i].pointStatus = true;
+						scoreBlue();
+						if(dead >= 2) {
+							for(int l =0; l<B.length; l++) {
+								if(B[l].pointStatus == true) {
+								B[l].purge = false;
+								}
+								}
+						}
+					}
+					
+			}
 			
 		}
 		}
 	}
 
+	
+	
+	if(Math.abs(hat.x+ - a.x) < 60) {
+		if(Math.abs(hat.y - a.y) <60){
+			
+			hit();
+			}
+			
+		}
+	else if(Math.abs(a.x - hat.x) < 60) {
+			if(Math.abs(a.y - hat.y) <60){
+				hit();
+				}
+			}
+			
+	
+	
+
+
+
+
+
+		
 		if(p1Score < 0) {
 		gameOver.paint(g);
+		a.level = 1;
+		a.score = 0;
 		}
 		
 		hat.paint(g);
@@ -418,33 +562,38 @@ public class Frame extends JPanel implements ActionListener, MouseListener, KeyL
 	}
 	public static void scoreYellow () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
-		p1Score +=3;
+		p1Score +=1;
 		
 	}
 	public static void scoreGreen () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 	
-		p1Score +=4;
+		p1Score +=2;
 	
 	}
 	public static void scoreBlue () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 	
-		p1Score +=5;
+		p1Score +=3;
 	
 	}
 	public static void scorePurple () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
-		p1Score +=6;
+		p1Score +=5;
 		
 	}
 	public static void scoreFlower () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
-		p1Score +=20;
+		p1Score +=10;
 		
 	}
 	public static void scoreEnemy () { // MAKE ONE FOR EACH POINT VALUE(re -3, blu +3 Etc)
 		
 		p1Score --;
 		
+	}
+	
+	public void hit() {
+		
+		p1Score -= a.sub;
 	}
 	
 	public static void startDisplay () {
@@ -743,6 +892,7 @@ for(int i =0; i < B.length; i++) {
 			c7 = "";
 			c8 = "";
 			score = "Strength:";
+			
 			changeC = "";
 			scoreCol =Color.ORANGE;
 			
@@ -812,3 +962,4 @@ for(int i =0; i < B.length; i++) {
 	}
 
 }
+
