@@ -29,7 +29,7 @@ This class contains all of the properties of the Hat including boundries, moveme
 
 The Frame class has all of the background code which is needed to display and run the code. Some of the contents include point values for the different colored food, boundries, text boxes, hitboxes, keystrokes, as well as just storing information in order for the game to run peroperly
 
-![Screen Shot 2022-05-30 at 10 47 50 PM](https://user-images.githubusercontent.com/81203435/171101609-15e57ef7-558a-456d-b257-07121737a42a.jpg
+![Screen Shot 2022-05-30 at 10 47 50 PM](https://user-images.githubusercontent.com/81203435/171101609-15e57ef7-558a-456d-b257-07121737a42a.jpg)
 
 
 ## A.I. Class:
