@@ -1,5 +1,6 @@
 # Agario
-![](ezgif-1-5d8730afe9.gif)
+![](ezgif-1-5d8![ezgif-1-5d8730afe9](https://user-images.githubusercontent.com/81203435/171082679-a78f1ede-a6f4-4360-abd9-b6fc150d580b.gif)
+730afe9.gif)
 
 ## Game Overview
 In this game you are a circular object which you can control to move around the screen eating food particles. The main objective of the game is to get the highest score possible before getting eaten or losing all your strength which both end up in the game ending. On the main menu, The User can use the "A" & "D" key to change their current skin which they will play as in the game. While in game the the player can use the arrow keys to move around freely, and pressing the keys repeatedly will increase the speed! 
