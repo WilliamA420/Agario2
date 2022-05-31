@@ -18,7 +18,7 @@ Right Arrow Key --> move to the Right
 ## CLASSES
 
 ![hat-removebg-preview](https://user-images.githubusercontent.com/81203435/171095110-7f433105-1ee5-45d8-bc88-a3872ac9a319.png)
-### Hat Class:
+## Hat Class:
 
 This class contains all of the properties of the Hat including boundries, movement, and displaying it in real time!
 
