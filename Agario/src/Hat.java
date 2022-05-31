@@ -50,7 +50,7 @@ public class Hat{
 		img11 = getImage("/imgs/Ukraine.png");
 		img12 = getImage("/imgs/US.png");
 		img13 = getImage("/imgs/Yugo.png");
-		img14 = getImage("/imgs/Pacman.png");
+		img14 = getImage("/imgs/No.png");
 		tx = AffineTransform.getTranslateInstance(x, y );
 		init(x, y); 				//initialize the location of the image
 									//use your variables
