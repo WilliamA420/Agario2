@@ -15,7 +15,7 @@ Right Arrow Key --> move to the Right
 
 "A" & "D" key --> change skin
 
-## Classes
+## CLASSES
 
 ![hat-removebg-preview](https://user-images.githubusercontent.com/81203435/171095110-7f433105-1ee5-45d8-bc88-a3872ac9a319.png)
 ### Hat Class:
@@ -41,7 +41,7 @@ The AI Class is responsible for the pacmna object that floats around the screen 
 ![Screen Shot 2022-05-30 at 11 12 41 PM](https://user-images.githubusercontent.com/81203435/171104894-fd0049b3-d9bd-4f42-bcd5-279b9e96daf1.jpg)
 
 
-## BGMain & Background Class::
+## BGMain & Background Class:
 
 These two classes store the image that is displayed onto the screen at any given moment, it allows it to change depending on what needs to be displayed at the current time whether its the main screen of the game itself.
 
