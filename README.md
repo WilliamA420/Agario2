@@ -1,5 +1,6 @@
 # Agario
-![](ezgif-1-5d8![ezgif-1-5d8730afe9](https://user-images.githubusercontent.com/81203435/171082679-a78f1ede-a6f4-4360-abd9-b6fc150d580b.gif)
+![ezgif-1-5d8730afe9](https://user-images.githubusercontent.com/81203435/171082720-93023173-f92c-4095-a60f-5ba88927b369.gif)
+
 730afe9.gif)
 
 ## Game Overview
